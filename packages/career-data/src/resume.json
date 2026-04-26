@@ -1,0 +1,196 @@
+{
+  "name": "Davi Araki",
+  "headline": "Senior Software Engineer",
+  "location": "Juiz de Fora, Brazil",
+  "contact": {
+    "phone": "55 32 988159015",
+    "email": "daviaraki.dev@gmail.com"
+  },
+  "summary": "I architect and lead the development of scalable, high-performance web applications. Specializing in conversational AI, gamification, and high-traffic platforms, I drive technical excellence, DX, and product impact.",
+  "experience": [
+    {
+      "company": "SK Intertainment, Inc.",
+      "role": "Senior Software Engineer",
+      "startDate": "2025-02",
+      "endDate": "Present",
+      "description": "Architected and led the complete frontend redevelopment of an AI-driven chat platform, significantly enhancing performance, SEO, and UX.",
+      "highlights": [
+        "Spearheaded global state architecture migration from Context API to Zustand, eliminating render bottlenecks and improving maintainability",
+        "Established comprehensive frontend guidelines, documentation, and unit testing standards, elevating team output and code reliability",
+        "Modernized the tech stack by driving the adoption of updated React Router / Remix patterns",
+        "Implemented unit testing throughout the codebase to ensure higher reliability and long-term code quality"
+      ],
+      "technologies": ["React", "Zustand", "React Router", "Remix"]
+    },
+    {
+      "company": "CI&T",
+      "role": "Senior Software Engineer",
+      "startDate": "2024-05",
+      "endDate": "2025-02",
+      "description": "Developed the frontend for a high-traffic AI tool, ensuring seamless functionality for thousands of users using React and Zustand.",
+      "highlights": [
+        "Built and maintained core components for an internal Design System combining shadcn and Tailwind to improve UI consistency",
+        "Ensured continuous application stability by implementing complete Vitest and Playwright test suites",
+        "Delivered scalable applications using agile methodologies to hit project deadlines"
+      ],
+      "technologies": ["React", "Zustand", "shadcn", "Tailwind CSS", "Vitest", "Playwright"]
+    },
+    {
+      "company": "CI&T",
+      "role": "Software Engineer",
+      "startDate": "2021-12",
+      "endDate": "2023-11",
+      "description": "Developed features for a global rewards platform impacting 2M+ clients across 15+ countries and built a corporate gamification app for HR.",
+      "highlights": [
+        "Developed the frontend of a corporate gamification app for HR, utilizing React to improve employee engagement",
+        "Optimized application responsiveness and performance leveraging Redux, TailwindCSS, and Azure",
+        "Maintained robust code coverage utilizing React Testing Library and Jest",
+        "Leveraged TypeScript to enforce strict typing and code maintainability",
+        "Implemented complex internationalization (i18n) solutions to support cross-border operations",
+        "Refactored legacy Redux architecture into Redux Toolkit, significantly improving maintainability",
+        "Wrote comprehensive unit and E2E tests using React Testing Library and Cypress",
+        "Acted as a liaison between engineering and product teams while utilizing Gen AI tools to boost development efficiency"
+      ],
+      "technologies": ["React", "Next.js", "Redux", "Redux Toolkit", "Tailwind CSS", "Azure", "TypeScript", "Jest", "React Testing Library", "Cypress"]
+    },
+    {
+      "company": "iFood",
+      "role": "Software Engineer",
+      "startDate": "2021-10",
+      "endDate": "2021-12",
+      "description": "Optimized critical user flows on a high-traffic e-commerce platform.",
+      "highlights": [
+        "Implemented a scalable Backend-For-Frontend (BFF) architecture using GraphQL, reducing data overhead and improving client load times",
+        "Contributed to the iFood Shop tribe, enhancing platform features and user experience"
+      ],
+      "technologies": ["Next.js", "TypeScript", "GraphQL"]
+    },
+    {
+      "company": "Rbm Web - Sistemas Inteligentes",
+      "role": "Software Engineer",
+      "startDate": "2021-06",
+      "endDate": "2021-10",
+      "description": "Engineered complex financial market dashboards.",
+      "highlights": [
+        "Engineered complex financial market dashboards using React JS, Redux, React Bootstrap, and GitLab",
+        "Modernized legacy applications with Redux Toolkit, Material UI, and Styled Components",
+        "Championed test-driven development with React Testing Library and Cypress"
+      ],
+      "technologies": ["React", "Redux", "Redux Toolkit", "React Bootstrap", "Material UI", "Styled Components", "React Testing Library", "Cypress"]
+    },
+    {
+      "company": "Creative Game Studios",
+      "role": "Board Game Developer",
+      "startDate": "2020-07",
+      "endDate": "2021-06",
+      "description": "Responsible for level design, playtesting, and game balancing.",
+      "highlights": [
+        "Implemented QR code doors feature",
+        "Helped set budgets and collaborated on the development of the game's website"
+      ]
+    },
+    {
+      "company": "Histeria Games",
+      "role": "Board Game Developer",
+      "startDate": "2016-03",
+      "endDate": "2019-03",
+      "description": "Developed two successful board games launched via crowdfunding.",
+      "highlights": [
+        "Balanced mechanics, conducted playtests, and designed kingdoms",
+        "Presented at conventions and maintained the website"
+      ]
+    },
+    {
+      "company": "Life Gestão de Frota",
+      "role": "Development Internship",
+      "startDate": "2014-05",
+      "endDate": "2014-07",
+      "description": "Helped the migration of the platform from Delphi 4 to Delphi 7, and provided client support."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidade Federal de Juiz de Fora",
+      "degree": "Bachelor's degree",
+      "field": "Sistemas de Informação",
+      "startDate": "2017-01",
+      "endDate": "2020-12"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Google UX Design",
+      "issuer": "Google",
+      "date": "2026-01"
+    },
+    {
+      "name": "Model Context Protocol: Advanced Topics",
+      "issuer": "Anthropic",
+      "date": "2025-08"
+    },
+    {
+      "name": "Generative AI Fundamentals",
+      "issuer": "Google",
+      "date": "2023-07"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Portuguese",
+      "proficiency": "NATIVE"
+    },
+    {
+      "name": "English",
+      "proficiency": "PROFESSIONAL"
+    }
+  ],
+  "skills": [
+    {
+      "category": "frontend",
+      "skills": [
+        { "name": "React" },
+        { "name": "Next.js" },
+        { "name": "TypeScript" },
+        { "name": "Tailwind CSS" },
+        { "name": "Zustand" },
+        { "name": "Redux" },
+        { "name": "React Router" },
+        { "name": "Remix Patterns" },
+        { "name": "Frontend Architecture" },
+        { "name": "UI Consistency" }
+      ]
+    },
+    {
+      "category": "backend",
+      "skills": [
+        { "name": "Backend-For-Frontend" },
+        { "name": "GraphQL" }
+      ]
+    },
+    {
+      "category": "engineering",
+      "skills": [
+        { "name": "Unit Testing" },
+        { "name": "End-to-End Testing" },
+        { "name": "Test-Driven Development" },
+        { "name": "Performance Optimization" },
+        { "name": "Scalability" },
+        { "name": "Code Maintainability" },
+        { "name": "Internationalization" }
+      ]
+    },
+    {
+      "category": "leadership",
+      "skills": [
+        { "name": "Technical Leadership" },
+        { "name": "Agile Methodologies" },
+        { "name": "Collaboration" },
+        { "name": "Communication" },
+        { "name": "Documentation" },
+        { "name": "Developer Experience" },
+        { "name": "Product Impact" },
+        { "name": "Budgeting" }
+      ]
+    }
+  ]
+}

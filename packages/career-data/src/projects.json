@@ -1,0 +1,83 @@
+[
+  {
+    "id": "career-agent-mastra",
+    "name": "Career Agent Mastra",
+    "description": "AI-powered career chatbot built with Mastra that answers recruiter questions about professional background using structured data and tool-calling.",
+    "role": "Creator & Developer",
+    "technologies": ["TypeScript", "Mastra", "React", "Zod", "Vite"],
+    "highlights": [
+      "Built modular AI agent with structured tool-calling architecture",
+      "Designed embeddable React widget for portfolio integration",
+      "Implemented deterministic contact workflow with email validation"
+    ],
+    "links": {
+      "github": "https://github.com/davi-araki/career-agent-mastra"
+    }
+  },
+  {
+    "id": "ai-driven-chat",
+    "name": "AI-Driven Chat Platform",
+    "description": "Frontend redevelopment of an AI-driven chat platform, enhancing performance, SEO, and UX.",
+    "role": "Senior Software Engineer (SK Intertainment, Inc.)",
+    "technologies": ["React", "Zustand", "React Router", "Remix"],
+    "highlights": [
+      "Spearheaded global state architecture migration from Context API to Zustand, eliminating render bottlenecks",
+      "Established comprehensive frontend guidelines and unit testing standards"
+    ]
+  },
+  {
+    "id": "internal-design-system",
+    "name": "Internal Design System",
+    "description": "Core components for an internal Design System to improve UI consistency across applications.",
+    "role": "Senior Software Engineer (CI&T)",
+    "technologies": ["React", "shadcn", "Tailwind CSS", "Vitest", "Playwright"],
+    "highlights": [
+      "Built and maintained core components combining shadcn and Tailwind",
+      "Ensured continuous application stability by implementing complete Vitest and Playwright test suites"
+    ]
+  },
+  {
+    "id": "global-rewards-platform",
+    "name": "Global Rewards Platform",
+    "description": "Rewards platform impacting 2M+ clients across 15+ countries.",
+    "role": "Software Engineer (CI&T)",
+    "technologies": ["React", "Next.js", "Redux Toolkit", "TypeScript", "Tailwind CSS"],
+    "highlights": [
+      "Implemented complex internationalization (i18n) solutions to support cross-border operations",
+      "Refactored legacy Redux architecture into Redux Toolkit, significantly improving maintainability"
+    ]
+  },
+  {
+    "id": "corporate-gamification-hr",
+    "name": "Corporate Gamification App",
+    "description": "Gamification application for HR to improve employee engagement.",
+    "role": "Software Engineer (CI&T)",
+    "technologies": ["React", "Redux", "Tailwind CSS", "Azure"],
+    "highlights": [
+      "Optimized application responsiveness and performance",
+      "Maintained robust code coverage utilizing React Testing Library and Jest"
+    ]
+  },
+  {
+    "id": "ifood-ecommerce",
+    "name": "iFood E-commerce Platform",
+    "description": "Optimized critical user flows on a high-traffic e-commerce platform.",
+    "role": "Software Engineer (iFood)",
+    "technologies": ["Next.js", "TypeScript", "GraphQL"],
+    "highlights": [
+      "Implemented a scalable Backend-For-Frontend (BFF) architecture using GraphQL",
+      "Reduced data overhead and improved client load times"
+    ]
+  },
+  {
+    "id": "financial-dashboards",
+    "name": "Financial Market Dashboards",
+    "description": "Complex financial market dashboards for intelligent systems.",
+    "role": "Software Engineer (Rbm Web)",
+    "technologies": ["React", "Redux Toolkit", "Material UI", "Styled Components"],
+    "highlights": [
+      "Modernized legacy applications with Redux Toolkit, Material UI, and Styled Components",
+      "Championed test-driven development with React Testing Library and Cypress"
+    ]
+  }
+]

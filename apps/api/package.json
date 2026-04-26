@@ -1,0 +1,31 @@
+{
+  "name": "@career-agent/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/server/index.js",
+  "scripts": {
+    "dev": "tsx watch src/server/index.ts",
+    "build": "tsc",
+    "start": "node dist/server/index.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "1.3.0",
+    "@career-agent/career-data": "workspace:*",
+    "@career-agent/shared": "workspace:*",
+    "@hono/node-server": "^1.14.0",
+    "@mastra/core": "^0.10.0",
+    "hono": "^4.7.0",
+    "resend": "^4.5.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.1.0"
+  }
+}

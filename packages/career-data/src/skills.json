@@ -1,0 +1,50 @@
+[
+  {
+    "category": "frontend",
+    "skills": [
+      { "name": "React" },
+      { "name": "Next.js" },
+      { "name": "TypeScript" },
+      { "name": "Tailwind CSS" },
+      { "name": "Zustand" },
+      { "name": "Redux / Redux Toolkit" },
+      { "name": "React Router" },
+      { "name": "Remix Patterns" },
+      { "name": "GraphQL" },
+      { "name": "shadcn" },
+      { "name": "Material UI" },
+      { "name": "Styled Components" }
+    ]
+  },
+  {
+    "category": "engineering",
+    "skills": [
+      { "name": "Unit Testing (Jest, Vitest)" },
+      { "name": "E2E Testing (Cypress, Playwright)" },
+      { "name": "React Testing Library" },
+      { "name": "Performance Optimization" },
+      { "name": "Frontend Architecture" },
+      { "name": "Backend-For-Frontend" }
+    ]
+  },
+  {
+    "category": "ai",
+    "skills": [
+      { "name": "LLM Integration" },
+      { "name": "Prompt Engineering" },
+      { "name": "AI Agent Development" },
+      { "name": "Mastra Framework" },
+      { "name": "Tool Calling" }
+    ]
+  },
+  {
+    "category": "leadership",
+    "skills": [
+      { "name": "Technical Leadership" },
+      { "name": "Agile Methodologies" },
+      { "name": "Developer Experience" },
+      { "name": "Code Maintainability" },
+      { "name": "UI Consistency" }
+    ]
+  }
+]
