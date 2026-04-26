@@ -7,7 +7,7 @@ export const readSkillsTool = createTool({
   description: "Return Davi Araki's grouped technical and professional skills.",
   inputSchema: z.object({
     category: z
-      .enum(['frontend', 'backend', 'ai', 'research', 'writing', 'all'])
+      .enum(['frontend', 'backend', 'engineering', 'ai', 'leadership', 'all'])
       .optional()
       .describe('Which skill category to return. Defaults to "all".'),
   }),

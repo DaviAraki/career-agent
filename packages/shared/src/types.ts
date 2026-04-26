@@ -3,14 +3,25 @@ export type LanguageItem = {
   proficiency: string;
 };
 
+export type ContactInfo = {
+  phone?: string;
+  email?: string;
+};
+
+export type CertificateItem = {
+  name: string;
+  issuer: string;
+  date?: string;
+};
+
 export type ExperienceItem = {
   company: string;
   role: string;
   startDate: string;
   endDate?: string;
   description: string;
-  highlights: string[];
-  technologies: string[];
+  highlights?: string[];
+  technologies?: string[];
 };
 
 export type EducationItem = {
@@ -36,9 +47,11 @@ export type ResumeData = {
   name: string;
   headline: string;
   location?: string;
+  contact?: ContactInfo;
   summary: string;
   experience: ExperienceItem[];
   education: EducationItem[];
+  certificates?: CertificateItem[];
   skills: SkillGroup[];
   languages?: LanguageItem[];
 };

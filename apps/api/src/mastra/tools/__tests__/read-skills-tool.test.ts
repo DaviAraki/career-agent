@@ -37,12 +37,12 @@ describe('readSkillsTool', () => {
     }
   });
 
-  it('should return data for research category', async () => {
+  it('should return data for engineering category', async () => {
     const result = await readSkillsTool.execute({
-      context: { category: 'research' as const },
+      context: { category: 'engineering' as const },
       runtimeContext: rt,
     });
 
-    expect(result.category).toBe('research');
+    expect(result.category).toBe('engineering');
   });
 });

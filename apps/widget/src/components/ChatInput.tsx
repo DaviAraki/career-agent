@@ -17,21 +17,33 @@ export const ChatInput: FC<ChatInputProps> = ({ onSend, disabled }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 border-t border-gray-200 p-3">
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center gap-2 border-t border-zinc-800/60 p-3"
+    >
       <input
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Ask about Davi's career..."
         disabled={disabled}
-        className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none disabled:opacity-50"
+        className="ca-font-body flex-1 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 transition-colors focus:border-amber-500/40 focus:outline-none focus:ring-2 focus:ring-amber-500/20 disabled:opacity-40"
       />
       <button
         type="submit"
         disabled={disabled || !input.trim()}
-        className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-zinc-950 transition-colors hover:bg-amber-400 disabled:opacity-30"
+        aria-label="Send message"
       >
-        Send
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M2 8L14 2L8 14L7 9L2 8Z" fill="currentColor" />
+        </svg>
       </button>
     </form>
   );

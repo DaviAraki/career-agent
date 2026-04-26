@@ -14,7 +14,17 @@
       "Bash(node -e \"import\\('@mastra/core/runtime-context'\\).then\\(m => console.log\\(Object.keys\\(m\\)\\)\\)\")",
       "Bash(pnpm --filter @career-agent/api test)",
       "Bash(pnpm --filter @career-agent/career-data build)",
-      "Bash(pnpm --filter @career-agent/shared build)"
+      "Bash(pnpm --filter @career-agent/shared build)",
+      "Bash(pnpm --filter @career-agent/widget build)",
+      "Bash(pnpm --filter @career-agent/api dev)",
+      "Bash(pnpm --filter @career-agent/demo dev)",
+      "Bash(pnpm --filter @career-agent/widget typecheck)",
+      "Bash(curl -s http://localhost:5175)",
+      "Bash(curl -s http://localhost:5175/src/main.tsx)",
+      "Bash(curl -s http://localhost:5175/src/App.tsx)",
+      "Bash(curl -s http://localhost:5176)",
+      "Bash(curl -s http://localhost:5176/src/main.tsx)",
+      "Bash(curl -s \"http://localhost:5176/@fs/D:/Usuarios/Davi/Documents/Projetos%202026/career-agent/apps/widget/dist/index.css\")"
     ]
   }
 }

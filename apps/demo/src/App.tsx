@@ -3,8 +3,10 @@ import { CareerChatWidget } from '@career-agent/widget';
 export function App() {
   return (
     <div className="mx-auto max-w-3xl p-8">
-      <h1 className="mb-2 text-2xl font-bold text-gray-900">Career Agent Demo</h1>
-      <p className="mb-6 text-sm text-gray-500">
+      <h1 className="ca-font-display mb-1 text-xl font-semibold text-zinc-100">
+        Career Agent Demo
+      </h1>
+      <p className="mb-6 text-sm text-zinc-500">
         Ask questions about Davi Araki&apos;s career, projects, and skills.
       </p>
       <div className="h-[680px]">

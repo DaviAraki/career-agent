@@ -1,0 +1,83 @@
+/* Obsidian Studio — Career Agent Widget Styles */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* Font families */
+.ca-font-display {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+
+.ca-font-body {
+  font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Ambient background glow */
+.ca-bg-glow {
+  background:
+    radial-gradient(ellipse at top left, rgba(245, 158, 11, 0.04), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(245, 158, 11, 0.02), transparent 40%),
+    #09090b;
+}
+
+/* Custom scrollbar — Webkit */
+.ca-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ca-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ca-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+}
+
+.ca-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Custom scrollbar — Firefox */
+.ca-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.07) transparent;
+}
+
+/* Animations */
+@keyframes ca-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ca-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes ca-dot-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.ca-animate-fade-up {
+  animation: ca-fade-up 0.3s ease-out both;
+}
+
+.ca-animate-pulse {
+  animation: ca-pulse 2s ease-in-out infinite;
+}
+
+.ca-dot-1 { animation: ca-dot-bounce 1.4s infinite ease-in-out both; }
+.ca-dot-2 { animation: ca-dot-bounce 1.4s infinite ease-in-out both; animation-delay: 0.16s; }
+.ca-dot-3 { animation: ca-dot-bounce 1.4s infinite ease-in-out both; animation-delay: 0.32s; }

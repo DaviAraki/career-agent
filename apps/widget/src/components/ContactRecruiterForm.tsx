@@ -12,6 +12,9 @@ type ContactRecruiterFormProps = {
   isLoading: boolean;
 };
 
+const inputClass =
+  'ca-font-body w-full rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 transition-colors focus:border-amber-500/40 focus:outline-none focus:ring-2 focus:ring-amber-500/20';
+
 export const ContactRecruiterForm: FC<ContactRecruiterFormProps> = ({
   onSubmit,
   onCancel,
@@ -35,8 +38,10 @@ export const ContactRecruiterForm: FC<ContactRecruiterFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-4">
-      <h3 className="text-sm font-semibold text-gray-900">Send a message to Davi</h3>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-2">
+      <h3 className="ca-font-display text-sm font-semibold text-zinc-100">
+        Send a message to Davi
+      </h3>
 
       <input
         type="text"
@@ -46,7 +51,7 @@ export const ContactRecruiterForm: FC<ContactRecruiterFormProps> = ({
         required
         minLength={2}
         maxLength={100}
-        className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+        className={inputClass}
       />
 
       <input
@@ -55,7 +60,7 @@ export const ContactRecruiterForm: FC<ContactRecruiterFormProps> = ({
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Your email *"
         required
-        className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+        className={inputClass}
       />
 
       <input
@@ -64,7 +69,7 @@ export const ContactRecruiterForm: FC<ContactRecruiterFormProps> = ({
         onChange={(e) => setCompany(e.target.value)}
         placeholder="Company (optional)"
         maxLength={100}
-        className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+        className={inputClass}
       />
 
       <input
@@ -73,7 +78,7 @@ export const ContactRecruiterForm: FC<ContactRecruiterFormProps> = ({
         onChange={(e) => setRole(e.target.value)}
         placeholder="Role (optional)"
         maxLength={100}
-        className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+        className={inputClass}
       />
 
       <textarea
@@ -84,21 +89,21 @@ export const ContactRecruiterForm: FC<ContactRecruiterFormProps> = ({
         minLength={10}
         maxLength={2000}
         rows={3}
-        className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none resize-none"
+        className={`${inputClass} resize-none`}
       />
 
-      <div className="flex gap-2">
+      <div className="flex gap-2 pt-1">
         <button
           type="button"
           onClick={onCancel}
-          className="flex-1 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          className="ca-font-body flex-1 rounded-xl border border-zinc-800 px-4 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:border-zinc-700 hover:text-zinc-200"
         >
           Cancel
         </button>
         <button
           type="submit"
           disabled={isLoading}
-          className="flex-1 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+          className="ca-font-body flex-1 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-medium text-zinc-950 transition-colors hover:bg-amber-400 disabled:opacity-40"
         >
           {isLoading ? 'Sending...' : 'Send'}
         </button>

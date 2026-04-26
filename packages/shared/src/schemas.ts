@@ -8,7 +8,7 @@ export const projectQuerySchema = z.object({
   limit: z.number().min(1).max(10).optional().default(5),
 });
 
-export const skillsCategorySchema = z.enum(['frontend', 'backend', 'ai', 'research', 'writing', 'all']);
+export const skillsCategorySchema = z.enum(['frontend', 'backend', 'engineering', 'ai', 'leadership', 'all']);
 
 export const contactMessageSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
