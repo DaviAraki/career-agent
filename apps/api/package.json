@@ -21,6 +21,7 @@
     "@hono/node-server": "^1.14.0",
     "@mastra/core": "1.28.0",
     "@mastra/memory": "^1.17.1",
+    "@mastra/pg": "^1.9.2",
     "dotenv": "^17.4.2",
     "hono": "^4.7.0",
     "resend": "^4.5.0",

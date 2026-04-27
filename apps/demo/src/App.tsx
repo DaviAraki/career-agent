@@ -79,7 +79,7 @@ export function App() {
           {/* Right — Chat Widget */}
           <div className="os-widget-col os-reveal os-delay-2">
             <CareerChatWidget
-              apiBaseUrl="http://localhost:4111"
+              apiBaseUrl={import.meta.env.VITE_API_URL || "http://localhost:4111"}
               initialMessage="Hi! I'm Davi's Career Agent — powered by AI. Ask me anything about his experience, projects, or skills."
             />
           </div>
