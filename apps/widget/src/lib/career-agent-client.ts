@@ -23,11 +23,11 @@ export class CareerAgentClient {
     this.baseUrl = baseUrl.replace(/\/$/, '');
   }
 
-  async chat(message: string): Promise<ChatResponse> {
+  async chat(message: string, conversationId?: string): Promise<ChatResponse> {
     const response = await fetch(`${this.baseUrl}/api/chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, conversationId }),
     });
 
     if (!response.ok) {

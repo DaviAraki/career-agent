@@ -22,6 +22,7 @@ export const CareerChatWidget: FC<CareerChatWidgetProps> = ({
   const [messages, setMessages] = useState<Message[]>([
     { id: 'welcome', role: 'assistant', content: initialMessage },
   ]);
+  const [conversationId, setConversationId] = useState<string | undefined>();
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const client = new CareerAgentClient(apiBaseUrl);
@@ -37,7 +38,12 @@ export const CareerChatWidget: FC<CareerChatWidgetProps> = ({
       setState('loading');
 
       try {
-        const response = await client.chat(text);
+        const response = await client.chat(text, conversationId);
+        
+        if (response.conversationId) {
+          setConversationId(response.conversationId);
+        }
+
         const assistantMsg: Message = {
           id: crypto.randomUUID(),
           role: 'assistant',

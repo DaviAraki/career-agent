@@ -1,4 +1,5 @@
 import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
 import { deepseek } from '@ai-sdk/deepseek';
 import { readResumeTool } from '../tools/read-resume-tool.js';
 import { readProjectsTool } from '../tools/read-projects-tool.js';
@@ -8,6 +9,7 @@ import { sendContactMessageTool } from '../tools/send-contact-message-tool.js';
 export const careerAgent = new Agent({
   id: 'career-agent',
   name: 'Career Agent',
+  memory: new Memory(),
   instructions: `You are Davi Araki's Career Agent.
 
 Your purpose is to help recruiters, hiring managers, collaborators, and visitors understand Davi's professional background.

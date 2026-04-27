@@ -25,11 +25,18 @@ export const chatRoute = new Hono().post('/', async (c) => {
 
   try {
     const agent = mastra.getAgent('careerAgent');
-    const result = await agent.generate(message);
+    const threadId = parsed.data.conversationId ?? crypto.randomUUID();
+    
+    const result = await agent.generate(message, {
+      memory: {
+        thread: threadId,
+        resource: 'career-agent',
+      },
+    });
 
     return c.json({
       answer: result.text,
-      conversationId: parsed.data.conversationId ?? crypto.randomUUID(),
+      conversationId: threadId,
     });
   } catch (error) {
     console.error('Chat error:', error);
