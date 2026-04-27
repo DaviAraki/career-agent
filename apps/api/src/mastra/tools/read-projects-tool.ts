@@ -13,22 +13,22 @@ export const readProjectsTool = createTool({
   outputSchema: z.object({
     projects: z.array(z.unknown()),
   }),
-  execute: async ({ context }) => {
+  execute: async ({ technology, projectId, limit }) => {
     let results = [...projectsData];
 
-    if (context.projectId) {
-      const project = results.find((p) => p.id === context.projectId);
+    if (projectId) {
+      const project = results.find((p) => p.id === projectId);
       return { projects: project ? [project] : [] };
     }
 
-    if (context.technology) {
-      const techLower = context.technology.toLowerCase();
+    if (technology) {
+      const techLower = technology.toLowerCase();
       results = results.filter((p) =>
         p.technologies.some((t) => t.toLowerCase().includes(techLower)),
       );
     }
 
-    const limit = context.limit ?? 5;
-    return { projects: results.slice(0, limit) };
+    const finalLimit = limit ?? 5;
+    return { projects: results.slice(0, finalLimit) };
   },
 });

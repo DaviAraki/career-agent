@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { RuntimeContext } from '@mastra/core/runtime-context';
 
 vi.mock('resend', () => ({
   Resend: vi.fn().mockImplementation(() => ({
@@ -10,8 +9,6 @@ vi.mock('resend', () => ({
 }));
 
 import { sendContactMessageTool } from '../send-contact-message-tool.js';
-
-const rt = new RuntimeContext();
 
 describe('sendContactMessageTool', () => {
   beforeEach(() => {
@@ -27,7 +24,7 @@ describe('sendContactMessageTool', () => {
       message: 'This is a test message that is long enough.',
     };
 
-    const parsed = sendContactMessageTool.inputSchema.safeParse(input);
+    const parsed = (sendContactMessageTool.inputSchema as any).safeParse(input);
     expect(parsed.success).toBe(false);
   });
 
@@ -38,7 +35,7 @@ describe('sendContactMessageTool', () => {
       message: 'short',
     };
 
-    const parsed = sendContactMessageTool.inputSchema.safeParse(input);
+    const parsed = (sendContactMessageTool.inputSchema as any).safeParse(input);
     expect(parsed.success).toBe(false);
   });
 
@@ -49,7 +46,7 @@ describe('sendContactMessageTool', () => {
       message: 'This is a valid message.',
     };
 
-    const parsed = sendContactMessageTool.inputSchema.safeParse(input);
+    const parsed = (sendContactMessageTool.inputSchema as any).safeParse(input);
     expect(parsed.success).toBe(false);
   });
 
@@ -61,7 +58,7 @@ describe('sendContactMessageTool', () => {
       recipient: 'attacker@evil.com',
     };
 
-    const parsed = sendContactMessageTool.inputSchema.safeParse(input);
+    const parsed = (sendContactMessageTool.inputSchema as any).safeParse(input);
     expect(parsed.success).toBe(true);
     expect(parsed.data).not.toHaveProperty('recipient');
   });
@@ -75,21 +72,21 @@ describe('sendContactMessageTool', () => {
       message: 'I would like to discuss a potential role at our company.',
     };
 
-    const parsed = sendContactMessageTool.inputSchema.safeParse(input);
+    const parsed = (sendContactMessageTool.inputSchema as any).safeParse(input);
     expect(parsed.success).toBe(true);
   });
 
   it('should return safe error when email service is not configured', async () => {
     delete process.env.RESEND_API_KEY;
 
-    const result = await sendContactMessageTool.execute({
-      context: {
+    const result: any = await sendContactMessageTool.execute!(
+      {
         name: 'Test User',
         email: 'test@example.com',
         message: 'This is a test message that is long enough.',
       },
-      runtimeContext: rt,
-    });
+      {} as any,
+    );
 
     expect(result.success).toBe(false);
     expect(result.message).not.toContain('undefined');

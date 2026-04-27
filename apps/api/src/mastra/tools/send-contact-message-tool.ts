@@ -18,7 +18,7 @@ export const sendContactMessageTool = createTool({
     success: z.boolean(),
     message: z.string(),
   }),
-  execute: async ({ context }) => {
-    return sendContactEmail(context);
+  execute: async (input) => {
+    return sendContactEmail(input);
   },
 });

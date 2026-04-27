@@ -12,8 +12,8 @@ const deepseek = createOpenAI({
 });
 
 export const careerAgent = new Agent({
-  name: 'career-agent' as const,
-  description: 'Answers recruiter questions about Davi Araki’s career using structured data.',
+  id: 'career-agent',
+  name: 'Career Agent',
   instructions: `You are Davi Araki's Career Agent.
 
 Your purpose is to help recruiters, hiring managers, collaborators, and visitors understand Davi's professional background.
@@ -56,5 +56,5 @@ Default response style:
     readProjectsTool,
     readSkillsTool,
     sendContactMessageTool,
-  },
+  } as any,
 });

@@ -15,18 +15,18 @@ export const readResumeTool = createTool({
     section: z.string(),
     data: z.unknown(),
   }),
-  execute: async ({ context }) => {
-    const section = context.section ?? 'all';
+  execute: async ({ section }) => {
+    const targetSection = section ?? 'all';
 
-    switch (section) {
+    switch (targetSection) {
       case 'summary':
-        return { section, data: { name: resumeData.name, headline: resumeData.headline, summary: resumeData.summary, location: resumeData.location } };
+        return { section: targetSection, data: { name: resumeData.name, headline: resumeData.headline, summary: resumeData.summary, location: resumeData.location } };
       case 'experience':
-        return { section, data: resumeData.experience };
+        return { section: targetSection, data: resumeData.experience };
       case 'education':
-        return { section, data: resumeData.education };
+        return { section: targetSection, data: resumeData.education };
       case 'skills':
-        return { section, data: resumeData.skills };
+        return { section: targetSection, data: resumeData.skills };
       case 'all':
       default:
         return { section: 'all', data: resumeData };

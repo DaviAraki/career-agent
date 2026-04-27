@@ -27,7 +27,7 @@ export const contactRoute = new Hono().post('/', async (c) => {
 
   try {
     const workflow = mastra.getWorkflow('contactWorkflow');
-    const run = workflow.createRun();
+    const run = await workflow.createRun();
     const result = await run.start({ inputData: parsed.data });
 
     if (result.status === 'success') {
@@ -35,7 +35,8 @@ export const contactRoute = new Hono().post('/', async (c) => {
     }
 
     return c.json({ success: false, message: 'Failed to process contact request.' }, 500);
-  } catch {
+  } catch (err) {
+    console.error('Workflow error:', err);
     return c.json({ success: false, message: 'An unexpected error occurred.' }, 500);
   }
 });

@@ -15,14 +15,14 @@ export const readSkillsTool = createTool({
     category: z.string(),
     skills: z.array(z.unknown()),
   }),
-  execute: async ({ context }) => {
-    const category = context.category ?? 'all';
+  execute: async ({ category }) => {
+    const targetCategory = category ?? 'all';
 
-    if (category === 'all') {
+    if (targetCategory === 'all') {
       return { category: 'all', skills: skillsData };
     }
 
-    const filtered = skillsData.filter((g) => g.category === category);
-    return { category, skills: filtered };
+    const filtered = skillsData.filter((g) => g.category === targetCategory);
+    return { category: targetCategory, skills: filtered };
   },
 });
