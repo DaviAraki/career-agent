@@ -31,7 +31,8 @@ export const chatRoute = new Hono().post('/', async (c) => {
       answer: result.text,
       conversationId: parsed.data.conversationId ?? crypto.randomUUID(),
     });
-  } catch {
-    return c.json({ error: 'Failed to generate response' }, 500);
+  } catch (error) {
+    console.error('Chat error:', error);
+    return c.json({ error: 'Failed to generate response', details: error instanceof Error ? error.message : String(error) }, 500);
   }
 });

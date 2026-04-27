@@ -1,15 +1,9 @@
 import { Agent } from '@mastra/core/agent';
-import { createOpenAI } from '@ai-sdk/openai';
+import { deepseek } from '@ai-sdk/deepseek';
 import { readResumeTool } from '../tools/read-resume-tool.js';
 import { readProjectsTool } from '../tools/read-projects-tool.js';
 import { readSkillsTool } from '../tools/read-skills-tool.js';
 import { sendContactMessageTool } from '../tools/send-contact-message-tool.js';
-
-const deepseek = createOpenAI({
-  baseURL: 'https://api.deepseek.com/v1',
-  apiKey: process.env.DEEPSEEK_API_KEY,
-  compatibility: 'compatible',
-});
 
 export const careerAgent = new Agent({
   id: 'career-agent',
@@ -50,7 +44,7 @@ Default response style:
 - 2 to 5 short paragraphs
 - Use bullets when comparing skills, projects, or role fit
 - Prefer concrete evidence from projects and experience`,
-  model: deepseek('deepseek-v4-flash'),
+  model: deepseek('deepseek-chat'),
   tools: {
     readResumeTool,
     readProjectsTool,

@@ -13,7 +13,7 @@
     "./styles.css": "./dist/index.css"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "vite build && tsc",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/"
