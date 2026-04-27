@@ -6,11 +6,11 @@ import { ContactRecruiterForm } from './ContactRecruiterForm.js';
 import type { ChatState, Message, CareerChatWidgetProps } from '../types/chat.js';
 
 const SUGGESTED_PROMPTS = [
-  'What kind of frontend experience does Davi have?',
-  'What AI projects has Davi built?',
-  'What roles would fit Davi’s background?',
-  'Summarize Davi’s experience for a recruiter.',
-  'How can I contact Davi?',
+  { icon: '\u{1F4BB}', text: 'What frontend experience does Davi have?' },
+  { icon: '\u{1F916}', text: 'What AI projects has Davi built?' },
+  { icon: '\u{1F3AF}', text: "What roles would fit Davi's background?" },
+  { icon: '\u{1F4CB}', text: "Summarize Davi's experience for a recruiter." },
+  { icon: '\u{2709}\uFE0F', text: 'How can I contact Davi?' },
 ];
 
 export const CareerChatWidget: FC<CareerChatWidgetProps> = ({
@@ -112,24 +112,31 @@ export const CareerChatWidget: FC<CareerChatWidgetProps> = ({
     <div
       className={`ca-font-body ca-bg-glow flex flex-col ${
         variant === 'embedded' ? 'h-full' : 'h-[680px]'
-      } rounded-2xl border border-zinc-800/60 shadow-2xl shadow-black/40`}
+      } rounded-2xl border border-zinc-800/60 shadow-2xl shadow-black/40 overflow-hidden`}
     >
       {/* Header */}
       <div className="flex items-center justify-between border-b border-zinc-800/60 px-5 py-3.5">
         <div className="flex items-center gap-2.5">
-          <h2 className="ca-font-display text-sm font-semibold text-zinc-100">
-            Career Agent
-          </h2>
-          <span className="flex items-center gap-1.5 text-[11px] text-zinc-500">
-            <span className="ca-animate-pulse inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            Online
-          </span>
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500/10 border border-amber-500/20">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h2 className="ca-font-display text-sm font-semibold text-zinc-100 leading-none">
+              Career Agent
+            </h2>
+            <span className="flex items-center gap-1.5 text-[10px] text-zinc-500 mt-0.5">
+              <span className="ca-animate-pulse inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              AI-powered
+            </span>
+          </div>
         </div>
         <button
           onClick={() =>
             setState(state === 'contactFormOpen' ? 'idle' : 'contactFormOpen')
           }
-          className="ca-font-body rounded-lg border border-amber-500/25 bg-amber-500/5 px-3 py-1.5 text-xs font-medium text-amber-400 transition-colors hover:border-amber-500/40 hover:bg-amber-500/10"
+          className="ca-font-body rounded-lg border border-amber-500/25 bg-amber-500/5 px-3 py-1.5 text-xs font-medium text-amber-400 transition-all hover:border-amber-500/40 hover:bg-amber-500/10 hover:shadow-sm hover:shadow-amber-500/10"
         >
           Contact Davi
         </button>
@@ -145,8 +152,8 @@ export const CareerChatWidget: FC<CareerChatWidgetProps> = ({
           />
         ) : (
           <>
-            {messages.map((msg) => (
-              <ChatMessage key={msg.id} message={msg} />
+            {messages.map((msg, i) => (
+              <ChatMessage key={msg.id} message={msg} index={i} />
             ))}
             {isLoading && (
               <div className="ca-animate-fade-up mb-3 flex items-end gap-2.5">
@@ -161,14 +168,20 @@ export const CareerChatWidget: FC<CareerChatWidgetProps> = ({
               </div>
             )}
             {showPrompts && (
-              <div className="ca-animate-fade-up mt-5 flex flex-wrap gap-2">
+              <div className="ca-animate-fade-up mt-4 flex flex-col gap-1.5">
+                <span className="px-1 mb-1 text-[10px] uppercase tracking-widest text-zinc-600 font-medium">
+                  Try asking
+                </span>
                 {SUGGESTED_PROMPTS.map((prompt) => (
                   <button
-                    key={prompt}
-                    onClick={() => handleSend(prompt)}
-                    className="ca-font-body rounded-xl border border-zinc-800/60 bg-zinc-900/50 px-3.5 py-2 text-xs text-zinc-400 transition-all hover:border-amber-500/30 hover:bg-amber-500/5 hover:text-zinc-200"
+                    key={prompt.text}
+                    onClick={() => handleSend(prompt.text)}
+                    className="ca-font-body group flex items-center gap-2.5 rounded-xl border border-zinc-800/60 bg-zinc-900/40 px-3.5 py-2.5 text-left text-[13px] text-zinc-400 transition-all hover:border-amber-500/25 hover:bg-amber-500/5 hover:text-zinc-200"
                   >
-                    {prompt}
+                    <span className="text-sm opacity-60 group-hover:opacity-100 transition-opacity">
+                      {prompt.icon}
+                    </span>
+                    {prompt.text}
                   </button>
                 ))}
               </div>
